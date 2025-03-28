@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "67e43a5f6be9fe6c9ab72099"
+  },
+  "review_id": {
+    "$oid": "67e43aa06be9fe6c9ab7209a"
+  },
+  "user_id": {
+    "$oid": "67e43aa36be9fe6c9ab7209b"
+  },
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": "2025-03-27T00:00:00.000+00:00"
+}]

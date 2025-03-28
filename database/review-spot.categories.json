@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "67e2a2f9a39560e24e506779"
+  },
+  "name": "MakeUp",
+  "description": "Các loại mỹ phẩm tự nhiên, lành tính",
+  "parent_id": null,
+  "created_at": {
+    "$date": "2025-03-25T12:00:00.000Z"
+  },
+  "updated_at": "2025-03-25T12:00:00.000+00:00"
+},
+{
+  "_id": {
+    "$oid": "67e445e56be9fe6c9ab720f1"
+  },
+  "name": "Skincare",
+  "description": "Các sản phẩm chăm sóc da mặt.",
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": "2025-03-27T00:00:00.000+00:00"
+},
+{
+  "_id": {
+    "$oid": "67e446026be9fe6c9ab720f2"
+  },
+  "name": "Bodycare",
+  "description": "Sản phẩm chăm sóc cơ thể.",
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": "2025-03-27T00:00:00.000+00:00"
+},
+{
+  "_id": {
+    "$oid": "67e4461d6be9fe6c9ab720f3"
+  },
+  "name": "Haircare",
+  "description": "Các sản phẩm chăm sóc tóc.",
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": "2025-03-27T00:00:00.000+00:00"
+}]

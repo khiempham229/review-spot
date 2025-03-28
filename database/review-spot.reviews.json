@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "67e2a263a39560e24e506776"
+  },
+  "title": "Tiêu đề bài viết",
+  "content": "Nội dung bài viết...",
+  "author_id": {
+    "$oid": "67e29e54a39560e24e506771"
+  },
+  "status": "approved",
+  "approved_by": {
+    "$date": "2025-03-26T17:00:00.000Z"
+  },
+  "approved_at": {
+    "$date": "2025-03-26T17:00:00.000Z"
+  },
+  "brand_id": {
+    "$oid": "67e4350e6be9fe6c9ab7208d"
+  },
+  "category_ids": [
+    {
+      "$oid": "67e4352f6be9fe6c9ab7208f"
+    }
+  ],
+  "created_at": {
+    "$date": "2025-03-26T17:00:00.000Z"
+  },
+  "product_name": "Tên sản phẩm",
+  "rating": 9,
+  "tags": [
+    "Dưỡng ẩm",
+    "Da dầu"
+  ],
+  "comments_count": 10,
+  "likes_count": 19,
+  "product_id": {
+    "$oid": "67e4403f6be9fe6c9ab720ca"
+  },
+  "updated_at": "2025-03-26T17:00:00.000+00:00"
+}]

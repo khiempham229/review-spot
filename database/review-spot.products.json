@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "67e43c9a6be9fe6c9ab720a5"
+  },
+  "name": "Sữa rửa mặt CeraVe",
+  "brand_id": {
+    "$oid": "67e43d4c6be9fe6c9ab720aa"
+  },
+  "category_ids": [
+    {
+      "$oid": "67e43d2d6be9fe6c9ab720a6"
+    }
+  ],
+  "tags": [
+    "Dưỡng ẩm",
+    "Da dầu",
+    "Niacinamide"
+  ],
+  "description": "Sữa rửa mặt nhẹ dịu, phù hợp với da dầu và da nhạy cảm.",
+  "images": [
+    "https://example.com/cerave1.jpg"
+  ],
+  "average_rating": 4.5,
+  "reviews_count": 1,
+  "created_at": "2025-03-27T00:00:00.000+00:00",
+  "updated_at": "2025-03-27T00:00:00.000+00:00",
+  "categories": [
+    "SRM"
+  ]
+}]

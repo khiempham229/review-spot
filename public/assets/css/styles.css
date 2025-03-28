@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  --content-font-family: "Roboto", sans-serif;
+  --heading-font-family: "Merienda", cursive;
+  --primary-color: #f3f4f7;
+  --accent-color: #e7aeb6;
+  --text-color: #2d2d2d;
+  --light-text-color: #faf9f0;
+  background-color: #f3f4f7;
+  --cui-secondary: #cbc0d3;
+  --cui-secondary-rgb: 203, 192, 211;
+  font-family: var(--content-font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+}
+
+.sidebar + .wrapper {
+  width: 100%;
+  padding-left: var(--cui-sidebar-occupy-start, 0);
+  will-change: auto;
+  transition: padding 0.15s;
+}
+
+.header-toggler {
+  display: none;
+}
+
+.sidebar + .wrapper .header-toggler {
+  display: block;
+}
+
+.sidebar + .wrapper .header-brand {
+  display: none;
+}
+
+.bg-primary {
+  --cui-primary-rgb: 234, 199, 204;
+  background-color: #eac7cc;
+}
+
+.header-nav .nav-link {
+  font-weight: 500;
+  padding-block: 32px;
+  padding-inline: 16px;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+.header-nav .nav-link.active,
+.header-nav .nav-link:hover {
+  background-color: var(--accent-color);
+  color: var(--light-text-color);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--light-text-color);
+  text-decoration: none;
+  background-color: var(--accent-color);
+}
+
+a.dropdown-item {
+  cursor: pointer;
+}
+
+/* Home */
+.banner-carousel {
+  height: 400px;
+  overflow: hidden;
+}
+
+.banner-carousel .carousel-inner,
+.banner-carousel .carousel-item {
+  height: 100%;
+}
+
+.banner-carousel .carousel-item img {
+  /* width: 100%; */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.introduce-container {
+}
+
+.introduction-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  height: 100%;
+}
+
+section.container {
+  padding-block: 80px;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
+.review-card {
+  max-width: 18rem;
+  width: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
