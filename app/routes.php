@@ -10,7 +10,25 @@ $routes = [
     'auth/signin' => ['controller' => 'AuthController', 'method' => 'signin'],
     'logout' => ['controller' => 'AuthController', 'method' => 'logout'],
 
-    'review' => ['controller' => 'ReviewController', 'method' => 'index'],
+    'reviews' => ['controller' => 'ReviewController', 'method' => 'index'],
+    'reviews/details' => ['controller' => 'ReviewController', 'method' => 'reviewById'],
+    'reviews/add' => ['controller' => 'ReviewController', 'method' => 'addNewReview'],
+    'reviews/update' => ['controller' => 'ReviewController', 'method' => 'updateReview'],
+    'reviews/delete' => ['controller' => 'ReviewController', 'method' => 'deleteReview'],
+
+    // Categories
+    'categories' => ['controller' => 'CategoryController', 'method' => 'index'],
+    'categories/details' => ['controller' => 'CategoryController', 'method' => 'categoryById'],
+    'categories/add' => ['controller' => 'CategoryController', 'method' => 'addNewCategory'],
+    'categories/update' => ['controller' => 'CategoryController', 'method' => 'updateCategory'],
+    'categories/delete' => ['controller' => 'CategoryController', 'method' => 'deleteCategory'],
+
+    // Brands
+    'brands' => ['controller' => 'BrandController', 'method' => 'index'],
+    'brands/details' => ['controller' => 'BrandController', 'method' => 'brandById'],
+    'brands/add' => ['controller' => 'BrandController', 'method' => 'addNewBrand'],
+    'brands/update' => ['controller' => 'BrandController', 'method' => 'updateBrand'],
+    'brands/delete' => ['controller' => 'BrandController', 'method' => 'deleteBrand'],
 
 
     // Route for the books list page, maps to the 'index' method of 'BookController'

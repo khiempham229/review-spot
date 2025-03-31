@@ -7,7 +7,7 @@ class ReviewController extends Controller
         $reviewModel = $this->loadModel("Review");
         $reviews = $reviewModel->getAllReviews();
 
-        $this->renderView('Review/Review', ["reviews" => $reviews]);
+        $this->renderView('Review/Reviews', ["reviews" => $reviews]);
     }
 
     public function addNewReview()
@@ -15,7 +15,7 @@ class ReviewController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $reviewModel = $this->loadModel("Review");
             $reviewModel->addReview($_POST["title"], $_POST["author"], $_POST['isbn']);
-            header('Location: ' . BASE_URL . 'reviews');
+            header("Location: /reviews");
         }
         $this->renderView('Review/AddReview');
     }
@@ -24,14 +24,20 @@ class ReviewController extends Controller
     {
         $reviewModel = $this->loadModel("Review");
         $reviewModel->delete($id);
-        header('Location: ' . BASE_URL . 'reviews');
+        header("Location: /reviews");
     }
 
-    public function reviewById($id)
+    public function reviewById($id = null)
     {
+        if ($id === null) {
+            $_SESSION['error'] = 'Lỗi: ID rỗng!';
+            header("Location: /reviews");
+            exit();
+        }
+
         $reviewModel = $this->loadModel("Review");
         $review = $reviewModel->getReviewById($id);
-        $this->renderView('Review/Review', ["review" => $review], $review['title']);
+        $this->renderView('Review/Details', ["review" => $review], $review['title']);
     }
 
     public function updateReview($id)
@@ -39,7 +45,7 @@ class ReviewController extends Controller
         $reviewModel = $this->loadModel("Review");
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $reviewModel->update($id, $_POST['title'], $_POST['author'], $_POST['isbn']);
-            header('Location: ' . BASE_URL . 'reviews');
+            header("Location: /reviews");
         }
         $review = $reviewModel->getReviewById($id);
         $this->renderView('Review/UpdateReview', ["review" => $review]);

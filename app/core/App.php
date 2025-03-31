@@ -29,6 +29,7 @@ class App
 
         // Check if the second part of the URL exists
         if (isset($urlParts[1])) {
+            
             // Append the second part of the URL to the route
             $route = $urlParts[0] . '/' . $urlParts[1];
         }
@@ -41,11 +42,10 @@ class App
             $this->method = $routes[$route]['method'];
             // Set the remaining parts of the url to the params
             $this->params = array_slice($urlParts, 2);
-
         } else {
             // If the route is not found, display a 404 error message
             echo "404 - Route Not found!";
-            header("Location: /404");
+            // header("Location: /404");
 
             return;
         }

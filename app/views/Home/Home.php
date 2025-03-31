@@ -86,7 +86,7 @@
       </div>
     </div>
     <div class="col-auto">
-      <a href="#" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Xem Tất Cả</a>
+      <a href="#" class="btn btn-primary">Xem Tất Cả</a>
     </div>
   </div>
 </section>

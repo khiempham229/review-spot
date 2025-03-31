@@ -76,6 +76,9 @@
                   <a class="nav-link active" href="/">Trang Chủ</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link " href="/reviews">Reviews</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link " href="/products">Sản Phẩm</a>
                 </li>
                 <li class="nav-item">
@@ -140,7 +143,7 @@
     <footer class="footer px-4 bg-primary border-0">
       <div class="container">
         <p class="text-center mb-0">
-          &copy; Copyright by Khiem Pham.
+          &copy; Copyright by Khiem Pham. <?php isset($_SESSION['error']) && $_SESSION['error'] ?>
         </p>
       </div>
     </footer>
