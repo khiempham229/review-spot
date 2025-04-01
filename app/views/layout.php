@@ -109,7 +109,7 @@
                   <a class="nav-link py-0 pe-0 d-flex align-items-center gap-2" data-coreui-toggle="dropdown" href=""
                     role="button" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-md bg-primary border pt-2 px-1">
-                      <img class="avatar-img" src="<?= $_SESSION["user"]["avatar"] ?>" alt="user">
+                      <img class="avatar-img" src="<?= empty($_SESSION["user"]) ? '/public/assets/images/user.png' : $_SESSION["user"]["avatar"]?>" alt="user">
                     </div>
                     <span>
                       <?=
@@ -122,6 +122,9 @@
                       <li><a class="dropdown-item" href="/login">Đăng nhập</a></li>
                     <?php else: ?>
                       <li><a class="dropdown-item" href="#profile">Hồ sơ cá nhân</a></li>
+                      <?php if ($_SESSION["user"]["role"] == "admin"): ?>
+                        <li><a class="dropdown-item" href="/admin">Admin</a></li>
+                      <?php endif; ?>
                       <li><a class="dropdown-item" href="/reviews/add">Viết bài Review</a></li>
                       <li>
                         <hr class="dropdown-divider">

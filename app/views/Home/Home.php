@@ -35,11 +35,11 @@
 </section>
 
 <section class="container">
-  <h2>Bài Viết Nổi Bật</h2>
+  <h2>Bài Viết Mới Nhất</h2>
   <div class="row align-items-center justify-content-between flex-xl-nowrap mt-5">
     <div class="col flex-grow-1">
       <div class="row row-cols-4">
-        <?php foreach ($mostLikedReviews as $review): ?>
+        <?php foreach ($latestReviews as $review): ?>
           <div class="col">
             <div class="card review-card">
               <img src="<?= htmlspecialchars($review['product_image']) ?>" class="card-img-top" alt="srm-cerave">
@@ -61,11 +61,11 @@
 </section>
 
 <section class="container">
-  <h2>Bài Viết Mởi Nhất</h2>
+  <h2>Bài Viết Nổi Bật</h2>
   <div class="row align-items-center justify-content-between flex-xl-nowrap mt-5">
     <div class="col flex-grow-1">
       <div class="row row-cols-4">
-        <?php foreach ($latestReviews as $review): ?>
+        <?php foreach ($mostLikedReviews as $review): ?>
           <div class="col">
             <div class="card review-card">
               <img src="<?= htmlspecialchars($review['product_image']) ?>" class="card-img-top" alt="srm-cerave">

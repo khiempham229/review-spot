@@ -67,10 +67,18 @@
             return $this->collection->findOne(['_id' => new MongoDB\BSON\ObjectId($id)]);
         }
 
-        public function deleteReview($id)
+        public function updateReviewStatus($reviewId, $status)
+        {
+            $this->collection->updateOne(
+                ['_id' => new MongoDB\BSON\ObjectId($reviewId)],
+                ['$set' => ['status' => $status]]
+            );
+        }
+
+        public function deleteReviewById($id)
         {
             $result = $this->collection->deleteOne(['_id' => new MongoDB\BSON\ObjectId($id)]);
-            return $result->getDeletedCount();
+            // return $result->getDeletedCount();
         }
 
         public function getReviewsByFilter($categories, $brands)

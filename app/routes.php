@@ -19,6 +19,10 @@ $routes = [
     'reviews/like' => ['controller' => 'ReviewController', 'method' => 'likeReview'],
     'reviews/comment' => ['controller' => 'ReviewController', 'method' => 'addComment'],
 
+    // Admin
+    'admin' => ['controller' => 'AdminController', 'method' => 'index'],
+    'admin/updateStatus' => ['controller' => 'AdminController', 'method' => 'updateStatus'],
+    'admin/deleteReview' => ['controller' => 'AdminController', 'method' => 'deleteReview'],
 
     // Categories
     'categories' => ['controller' => 'CategoryController', 'method' => 'index'],
