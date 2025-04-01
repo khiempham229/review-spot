@@ -109,11 +109,11 @@
                   <a class="nav-link py-0 pe-0 d-flex align-items-center gap-2" data-coreui-toggle="dropdown" href=""
                     role="button" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-md bg-primary border pt-2 px-1">
-                      <img class="avatar-img" src="<?= empty($_SESSION["user"]) ? '/public/assets/images/user.png' : $_SESSION["user"]["avatar"]?>" alt="user">
+                      <img class="avatar-img" src="<?= empty($_SESSION["user"]) ? '/public/assets/images/user.png' : $_SESSION["user"]["avatar"] ?>" alt="user">
                     </div>
                     <span>
                       <?=
-                      ($_SESSION["user"]["fullName"] ?? 'Tài khoản');
+                      (!empty($_SESSION["user"]) ? $_SESSION["user"]["fullName"] : 'Tài khoản');
                       ?>
                     </span>
                   </a>
@@ -149,7 +149,7 @@
     <footer class="footer px-4 bg-primary border-0">
       <div class="container">
         <p class="text-center mb-0">
-          &copy; Copyright by Khiem Pham. <?php isset($_SESSION['error']) && $_SESSION['error'] ?>
+          &copy; Copyright by Ngo Ngo. <?php isset($_SESSION['error']) && $_SESSION['error'] ?>
         </p>
       </div>
     </footer>
@@ -178,7 +178,6 @@
   <script>
     $(document).ready(function() {
       const toastEl = $('#coreuiToast');
-      console.log(toastEl);
 
       if (toastEl.length) {
         const coreuiToast = new coreui.Toast(toastEl);
