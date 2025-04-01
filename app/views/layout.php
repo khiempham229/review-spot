@@ -80,14 +80,14 @@
                 <li class="nav-item">
                   <a class="nav-link <?= (strpos(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/reviews') === 0) ? 'active' : '' ?>" href="/reviews">Reviews</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/products') ? 'active' : '' ?>" href="/products">Sản Phẩm</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/categories') ? 'active' : '' ?>" href="/categories">Danh Mục</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                  <a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/contact') ? 'active' : '' ?>" href="/contact">Liên Hệ</a>
+                  <a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/contact') ? 'active' : '' ?>" href="/#contact-us">Liên Hệ</a>
                 </li>
                 <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="headerDropdown" role="button" data-coreui-toggle="dropdown" aria-expanded="false">
@@ -109,7 +109,7 @@
                   <a class="nav-link py-0 pe-0 d-flex align-items-center gap-2" data-coreui-toggle="dropdown" href=""
                     role="button" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-md bg-primary border pt-2 px-1">
-                      <img class="avatar-img" src="/public/assets/images/user.png" alt="user">
+                      <img class="avatar-img" src="<?= $_SESSION["user"]["avatar"] ?>" alt="user">
                     </div>
                     <span>
                       <?=
@@ -122,6 +122,7 @@
                       <li><a class="dropdown-item" href="/login">Đăng nhập</a></li>
                     <?php else: ?>
                       <li><a class="dropdown-item" href="#profile">Hồ sơ cá nhân</a></li>
+                      <li><a class="dropdown-item" href="/reviews/add">Viết bài Review</a></li>
                       <li>
                         <hr class="dropdown-divider">
                       </li>
@@ -170,6 +171,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.3.1/dist/js/coreui.bundle.min.js" integrity="sha384-8QmUFX1sl4cMveCP2+H1tyZlShMi1LeZCJJxTZeXDxOwQexlDdRLQ3O9L78gwBbe" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="/public/assets/js/main.js"></script>
   <script>
     $(document).ready(function() {
       const toastEl = $('#coreuiToast');

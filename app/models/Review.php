@@ -69,4 +69,48 @@
             $result = $this->collection->deleteOne(['_id' => new MongoDB\BSON\ObjectId($id)]);
             return $result->getDeletedCount();
         }
+
+        public function getReviewsByFilter($categories, $brands)
+        {
+            // Tạo điều kiện lọc
+            $filter = [];
+
+            // Lọc theo category_ids nếu có
+            if (!empty($categories)) {
+                // Kiểm tra nếu tất cả các category_ids là hợp lệ
+                $categories = array_filter($categories, function ($id) {
+                    return strlen($id) == 24 && ctype_xdigit($id); // Kiểm tra nếu id là 24 ký tự hex
+                });
+
+                // Nếu có category_ids hợp lệ, áp dụng lọc
+                if (!empty($categories)) {
+                    $filter['category_ids'] = ['$in' => array_map(function ($id) {
+                        return new MongoDB\BSON\ObjectId($id);
+                    }, $categories)];
+                }
+            }
+
+            // Lọc theo brand_id nếu có
+            if (!empty($brands)) {
+                // Loại bỏ các giá trị rỗng
+                $brands = array_filter($brands);
+
+                // Nếu có brands hợp lệ, áp dụng lọc
+                if (!empty($brands)) {
+                    $filter['brand_id'] = ['$in' => array_map(function ($id) {
+                        return new MongoDB\BSON\ObjectId($id);
+                    }, $brands)];
+                }
+            }
+
+            // Nếu không có bất kỳ filter nào, trả về tất cả các dữ liệu
+            if (empty($filter)) {
+                $reviews = $this->collection->find([])->toArray(); // Không lọc gì cả
+            } else {
+                // Truy vấn với các filter đã được áp dụng
+                $reviews = $this->collection->find($filter)->toArray();
+            }
+
+            return $reviews;
+        }
     }

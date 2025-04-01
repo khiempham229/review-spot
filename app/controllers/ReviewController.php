@@ -5,9 +5,25 @@ class ReviewController extends Controller
     public function index()
     {
         $reviewModel = $this->loadModel("Review");
-        $reviews = $reviewModel->getAllReviews();
+        $categoryModel = $this->loadModel("Category");
+        $brandModel = $this->loadModel("Brand");
 
-        $this->renderView('Review/Reviews', ["reviews" => $reviews]);
+        $categories = $categoryModel->getCategories();
+        $brands = $brandModel->getBrands();
+
+        // Kiểm tra nếu có bộ lọc category và brand
+        $filterCategories = isset($_GET['categories']) ? $_GET['categories'] : [];
+        $filterBrands = isset($_GET['brands']) ? $_GET['brands'] : [];
+
+        $reviews = $reviewModel->getReviewsByFilter($filterCategories, $filterBrands);
+
+        $this->renderView('Review/Reviews', [
+            "reviews" => $reviews,
+            "categories" => $categories,
+            "brands" => $brands,
+            "filterCategories" => $filterCategories,
+            "filterBrands" => $filterBrands,
+        ]);
     }
 
     public function addNewReview()
@@ -113,7 +129,8 @@ class ReviewController extends Controller
             "author" => $author,
             "brand" => $brand,
             "categories" => $categories,
-            "formattedDate" => $formattedDate
+            "formattedDate" => $formattedDate,
+            "status" => statusLabel($review['status'])
         ], $review['title']);
     }
 
@@ -172,7 +189,7 @@ class ReviewController extends Controller
             $commentModel = $this->loadModel("Comment");
 
             $commentModel->addComment($reviewId, $userId, $content);
-            $_SESSION['success'] = "Bình luận đã được thêm!";
+            // $_SESSION['success'] = "Bình luận đã được thêm!";
         } else {
             $_SESSION['error'] = "Vui lòng nhập nội dung bình luận.";
         }

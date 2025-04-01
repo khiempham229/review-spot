@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container review-details-container">
   <div class="card">
     <div class="card-body px-4 py-5">
       <h1 class="card-title"><?= htmlspecialchars($review['title']) ?></h1>
@@ -13,7 +13,7 @@
           <?= htmlspecialchars($review['product_name']) ?>
         </a>
       </p>
-      <p class="text-muted">Người viết: <strong><?= htmlspecialchars($author['firstName'] . ' ' . $author['lastName']) ?></strong> | Ngày đăng: <strong><?= $formattedDate ?></strong></p>
+      <p class="text-muted">Người viết: <strong><?= htmlspecialchars($author['firstName'] . ' ' . $author['lastName']) ?></strong> | Ngày đăng: <strong><?= $formattedDate ?></strong> | Trạng thái: <strong><?= $status ?></strong></p>
       <p class="text-muted">
         Đánh giá:
         <?= str_repeat('⭐', $review['rating']) ?>
@@ -22,7 +22,7 @@
       </p>
       <img src="<?= htmlspecialchars($review['product_image']) ?>" class="img-fluid mb-3" alt="<?= htmlspecialchars($review['product_name']) ?>">
       <p><?= nl2br(htmlspecialchars($review['content'])) ?></p>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center pt-4">
         <form action="/reviews/like" method="POST" class="mb-0">
           <input type="hidden" name="review_id" value="<?= $review['_id'] ?>">
           <button type="submit" class="btn btn-outline-primary me-2">❤️ <?= $review['likes_count'] ?> Thích</button>

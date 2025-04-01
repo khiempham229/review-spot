@@ -119,6 +119,10 @@ section.container {
   -webkit-line-clamp: 3;
 }
 
+.container.review-details-container {
+  max-width: 960px;
+}
+
 .review-card {
   max-width: 18rem;
   width: 100%;
@@ -166,5 +170,10 @@ section.container {
 
 .select2-container--default .select2-results__option--selected {
   color: #fff;
-  background-color: rgba(88, 151, 251, 0.9);
+  background-color: var(--primary-color);
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  color: #fff;
+  background-color: var(--accent-color);
 }

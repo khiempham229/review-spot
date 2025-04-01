@@ -79,6 +79,8 @@ class AuthController extends Controller
                     'fullName' => $user['firstName'] . " " . $user['lastName'],
                     'role' => $user['role'],
                     'status' => $user['status'],
+                    'avatar' => $user['avatar'] ?? '/public/assets/images/user.png',
+                    'bio' => $user['bio'] ?? '',
                 ];
 
                 $_SESSION['success'] = 'Đăng nhập thành công!';
