@@ -4,7 +4,7 @@
       <h3>Thêm Đánh Giá</h3>
     </div>
     <div class="card-body">
-      <form action="/reviews/save-new-review" method="POST">
+      <form action="/reviews/save-new-review" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="title" class="form-label">Tiêu đề</label>
           <input type="text" class="form-control" id="title" name="title" required>
@@ -37,7 +37,7 @@
         <div class="mb-3">
           <label for="rating" class="form-label">Đánh giá</label>
           <div class="rating-stars">
-            <?php for ($i = 1; $i <= 5; $i++) : ?>
+            <?php for ($i = 5; $i >= 1; $i--) : ?>
               <input type="radio" id="star<?= $i ?>" name="rating" value="<?= $i ?>">
               <label for="star<?= $i ?>"><i class="fas fa-star"></i></label>
             <?php endfor; ?>
@@ -49,8 +49,15 @@
           <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Thêm</button>
-        <a href="/reviews" class="btn btn-secondary">Hủy</a>
+        <div class="mb-3">
+          <label for="product_image" class="form-label">Ảnh sản phẩm</label>
+          <input type="file" class="form-control" id="product_image" name="product_image" accept="image/*">
+        </div>
+
+        <div class="mt-4">
+          <button type="submit" class="btn btn-primary">Thêm</button>
+          <a href="/reviews" class="btn btn-secondary">Hủy</a>
+        </div>
       </form>
     </div>
   </div>

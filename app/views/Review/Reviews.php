@@ -40,7 +40,7 @@
           <?php foreach ($reviews as $review): ?>
             <div class="col">
               <div class="card review-card">
-                <img src="/public/assets/images/srm-cerave.png" class="card-img-top" alt="srm-cerave">
+                <img src="<?= htmlspecialchars($review['product_image']) ?>" class="card-img-top" alt="srm-cerave">
                 <div class="card-body">
                   <h5 class="card-title truncate"><?= htmlspecialchars($review['title']) ?></h5>
                   <p class="card-subtitle mb-3 text-body-secondary"><?= htmlspecialchars($review['product_name']) ?></p>

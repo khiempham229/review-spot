@@ -34,8 +34,6 @@ class ReviewController extends Controller
         $brands = $brandModel->getBrands();
         $categories = $categoryModel->getCategories();
 
-
-
         $this->renderView('Review/AddReview', [
             "brands" => $brands,
             "categories" => $categories
@@ -46,6 +44,32 @@ class ReviewController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $reviewModel = $this->loadModel("Review");
+
+            $productImage = null;
+            if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
+                $imageTmpPath = $_FILES['product_image']['tmp_name'];
+                $imageName = $_FILES['product_image']['name'];
+                $imageExtension = pathinfo($imageName, PATHINFO_EXTENSION);
+
+                // Kiểm tra định dạng ảnh (chỉ chấp nhận jpg, png, jpeg)
+                $allowedExtensions = ['jpg', 'jpeg', 'png'];
+                if (!in_array(strtolower($imageExtension), $allowedExtensions)) {
+                    $_SESSION['error'] = 'Vui lòng chọn ảnh có định dạng jpg, jpeg hoặc png!';
+                    header("Location: /reviews/add");
+                    exit();
+                }
+
+                // Lưu ảnh vào thư mục uploads
+                $uploadDir = 'uploads/images/';
+                if (!is_dir($uploadDir)) {
+                    mkdir($uploadDir, 0777, true);
+                }
+
+                $imagePath = $uploadDir . uniqid() . '.' . $imageExtension;
+                move_uploaded_file($imageTmpPath, $imagePath);
+
+                $productImage = '/' . $imagePath;
+            }
 
             $isValidObjectId = function ($id) {
                 return (strlen($id) === 24 && ctype_xdigit($id));
@@ -66,6 +90,7 @@ class ReviewController extends Controller
                 "comments_count" => 0,
                 "likes_count" => 0,
                 "product_id" => $isValidObjectId($_POST["product_id"]) ? new MongoDB\BSON\ObjectId($_POST["product_id"]) : null,
+                "product_image" => $productImage,
                 "created_at" => new MongoDB\BSON\UTCDateTime(),
                 "updated_at" => new MongoDB\BSON\UTCDateTime()
             ];

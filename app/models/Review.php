@@ -3,11 +3,13 @@
     class Review
     {
         private $collection;
+        private $likeCollection;
 
         public function __construct()
         {
             $database = new Database();
             $this->collection = $database->getConnection()->reviews;
+            $this->likeCollection = $database->getConnection()->likes;
         }
 
         public function getAllReviews()
@@ -33,6 +35,7 @@
                 "comments_count" => 0,
                 "likes_count" => 0,
                 "product_id" => null,
+                "product_image" => $reviewData["product_image"],
                 "updated_at" => new MongoDB\BSON\UTCDateTime()
             ];
 
@@ -110,6 +113,52 @@
                 // Truy vấn với các filter đã được áp dụng
                 $reviews = $this->collection->find($filter)->toArray();
             }
+
+            return $reviews;
+        }
+
+        public function getLatestReviews($limit = 5)
+        {
+            $reviews = $this->collection->find(
+                [],
+                [
+                    'sort' => ['created_at' => -1],
+                    'limit' => $limit
+                ]
+            )->toArray();
+
+            return $reviews;
+        }
+
+        public function getMostLikedReviews($limit = 5)
+        {
+            // Truy vấn để lấy số lượng likes cho mỗi review
+            $pipeline = [
+                [
+                    '$group' => [
+                        '_id' => '$review_id',
+                        'likes_count' => ['$sum' => 1]
+                    ]
+                ],
+                [
+                    '$sort' => ['likes_count' => -1]  // Sắp xếp theo số lượt thích giảm dần
+                ],
+                [
+                    '$limit' => $limit  // Giới hạn số lượng review, ví dụ 5 bài review có số lượt thích nhiều nhất
+                ]
+            ];
+
+            $result = $this->likeCollection->aggregate($pipeline)->toArray();
+
+            // Lấy các review dựa trên review_id đã lấy từ kết quả
+            $reviewIds = array_map(function ($item) {
+                return new MongoDB\BSON\ObjectId($item['_id']);
+            }, $result);
+
+            // Lấy thông tin review từ bảng reviews
+            $reviews = $this->collection->find([
+                '_id' => ['$in' => $reviewIds]
+            ])->toArray();
 
             return $reviews;
         }
