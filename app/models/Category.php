@@ -14,7 +14,6 @@ class Category
         }
     }
 
-    // Thêm danh mục mới
     public function createCategory($name, $description, $parentId = null)
     {
         try {
@@ -37,7 +36,6 @@ class Category
         }
     }
 
-    // Lấy danh sách tất cả danh mục
     public function getCategories()
     {
         try {
@@ -48,7 +46,6 @@ class Category
         }
     }
 
-    // Lấy danh mục theo ID
     public function getCategoryById($categoryId)
     {
         try {
@@ -59,7 +56,18 @@ class Category
         }
     }
 
-    // Cập nhật danh mục
+    public function getCategoriesByIds($categoryIds)
+    {
+        // Chuyển BSONArray thành mảng PHP thuần
+        $categoryIdsArray = iterator_to_array($categoryIds);
+
+        return $this->collection->find([
+            '_id' => ['$in' => array_map(fn($id) => new MongoDB\BSON\ObjectId((string) $id), $categoryIdsArray)]
+        ])->toArray();
+    }
+
+
+
     public function updateCategory($categoryId, $data)
     {
         try {
@@ -77,7 +85,6 @@ class Category
         }
     }
 
-    // Xóa danh mục
     public function deleteCategory($categoryId)
     {
         try {

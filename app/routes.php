@@ -15,6 +15,10 @@ $routes = [
     'reviews/add' => ['controller' => 'ReviewController', 'method' => 'addNewReview'],
     'reviews/update' => ['controller' => 'ReviewController', 'method' => 'updateReview'],
     'reviews/delete' => ['controller' => 'ReviewController', 'method' => 'deleteReview'],
+    'reviews/save-new-review' => ['controller' => 'ReviewController', 'method' => 'saveNewReview'],
+    'reviews/like' => ['controller' => 'ReviewController', 'method' => 'likeReview'],
+    'reviews/comment' => ['controller' => 'ReviewController', 'method' => 'addComment'],
+
 
     // Categories
     'categories' => ['controller' => 'CategoryController', 'method' => 'index'],

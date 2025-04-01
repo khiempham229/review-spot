@@ -7,7 +7,9 @@
   <title><?= $title; ?></title>
   <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.3.1/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-PDUiPu3vDllMfrUHnurV430Qg8chPZTNhY8RUpq89lq22R3PzypXQifBpcpE1eoB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="public/assets/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="/public/assets/css/styles.css">
 </head>
 
 <body>
@@ -73,19 +75,19 @@
             <div class="col">
               <ul class="header-nav mr-auto justify-content-center">
                 <li class="nav-item">
-                  <a class="nav-link active" href="/">Trang Chủ</a>
+                  <a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/') ? 'active' : '' ?>" href="/">Trang Chủ</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="/reviews">Reviews</a>
+                  <a class="nav-link <?= (strpos(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/reviews') === 0) ? 'active' : '' ?>" href="/reviews">Reviews</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="/products">Sản Phẩm</a>
+                  <a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/products') ? 'active' : '' ?>" href="/products">Sản Phẩm</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="/categories">Danh Mục</a>
+                  <a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/categories') ? 'active' : '' ?>" href="/categories">Danh Mục</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " href="/contact">Liên Hệ</a>
+                  <a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/contact') ? 'active' : '' ?>" href="/contact">Liên Hệ</a>
                 </li>
                 <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="headerDropdown" role="button" data-coreui-toggle="dropdown" aria-expanded="false">
@@ -107,7 +109,7 @@
                   <a class="nav-link py-0 pe-0 d-flex align-items-center gap-2" data-coreui-toggle="dropdown" href=""
                     role="button" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-md bg-primary border pt-2 px-1">
-                      <img class="avatar-img" src="public/assets/images/user.png" alt="user">
+                      <img class="avatar-img" src="/public/assets/images/user.png" alt="user">
                     </div>
                     <span>
                       <?=
@@ -166,8 +168,8 @@
     unset($_SESSION['error']); ?>
   <?php endif; ?>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.3.1/dist/js/coreui.bundle.min.js" integrity="sha384-8QmUFX1sl4cMveCP2+H1tyZlShMi1LeZCJJxTZeXDxOwQexlDdRLQ3O9L78gwBbe" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <script>
     $(document).ready(function() {
       const toastEl = $('#coreuiToast');

@@ -70,7 +70,7 @@ class User
     }
 
     // Lấy chi tiết một người dùng
-    public function getUserDetails($userId)
+    public function getUserById($userId)
     {
         try {
             return $this->collection->findOne(['_id' => new MongoDB\BSON\ObjectId($userId)]);

@@ -3,7 +3,7 @@
 body {
   --content-font-family: "Roboto", sans-serif;
   --heading-font-family: "Merienda", cursive;
-  --primary-color: #f3f4f7;
+  --primary-color: #eac7cc;
   --accent-color: #e7aeb6;
   --text-color: #2d2d2d;
   --light-text-color: #faf9f0;
@@ -20,6 +20,7 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font-family);
+  margin-bottom: 0;
 }
 
 .sidebar + .wrapper {
@@ -121,8 +122,49 @@ section.container {
 .review-card {
   max-width: 18rem;
   width: 100%;
+  height: 100%;
 }
 
 .swiper-slide img {
   width: 100%;
+}
+
+/* Đánh giá sao */
+.rating-stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+}
+
+.rating-stars input {
+  display: none;
+}
+
+.rating-stars label {
+  font-size: 24px;
+  color: gray;
+  cursor: pointer;
+}
+
+.rating-stars input:checked~label,
+.rating-stars input:checked~label~label {
+  color: gold;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice,
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: #fff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.select2-container--default .select2-results__option--selected {
+  color: #fff;
+  background-color: rgba(88, 151, 251, 0.9);
 }

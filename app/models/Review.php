@@ -2,13 +2,12 @@
 
     class Review
     {
-        private $db;
         private $collection;
 
         public function __construct()
         {
-            $this->db = new Database();
-            $this->collection = $this->db->getConnection()->reviews;
+            $database = new Database();
+            $this->collection = $database->getConnection()->reviews;
         }
 
         public function getAllReviews()
@@ -16,15 +15,25 @@
             return $this->collection->find()->toArray();
         }
 
-        // Thêm một sách mới vào database
-        public function addReview($title, $author, $isbn)
+        public function addReview($reviewData)
         {
             $review = [
-                'title'  => $title,
-                'author' => $author,
-                'isbn'   => $isbn,
-                'created_at' => new MongoDB\BSON\UTCDateTime(),
-                'updated_at' => new MongoDB\BSON\UTCDateTime()
+                "title" => $reviewData["title"],
+                "content" => $reviewData["content"],
+                "author_id" => new MongoDB\BSON\ObjectId($reviewData["author_id"]),
+                "status" => "pending",
+                "approved_by" => null,
+                "approved_at" => null,
+                "brand_id" => new MongoDB\BSON\ObjectId($reviewData["brand_id"]),
+                "category_ids" => array_map(fn($id) => new MongoDB\BSON\ObjectId($id), $reviewData["category_ids"]),
+                "created_at" => new MongoDB\BSON\UTCDateTime(),
+                "product_name" => $reviewData["product_name"],
+                "rating" => (int) $reviewData["rating"],
+                "tags" => $reviewData["tags"],
+                "comments_count" => 0,
+                "likes_count" => 0,
+                "product_id" => null,
+                "updated_at" => new MongoDB\BSON\UTCDateTime()
             ];
 
             $result = $this->collection->insertOne($review);
