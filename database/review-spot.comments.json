@@ -3,16 +3,88 @@
     "$oid": "67e43ad46be9fe6c9ab7209d"
   },
   "review_id": {
-    "$oid": "67e43b066be9fe6c9ab7209e"
+    "$oid": "67ec1f74c26101a6400fc96e"
   },
-  "user_id": {
-    "$oid": "67e43b096be9fe6c9ab7209f"
+  "author_id": {
+    "$oid": "67e5c60c5f3ef5f387016dff"
   },
-  "content": "",
+  "content": "Sản phẩm tuyệt vời!",
   "created_at": {
-    "$date": "2025-03-27T00:00:00.000Z"
+    "$date": "2025-04-02T00:00:00.000Z"
   },
   "updated_at": {
-    "$date": "2025-03-27T00:00:00.000Z"
+    "$date": "2025-04-02T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec310380f93c435b114ab4"
+  },
+  "review_id": {
+    "$oid": "67ec1f74c26101a6400fc96e"
+  },
+  "author_id": {
+    "$oid": "67e29d71a39560e24e50676f"
+  },
+  "content": "Số 1!",
+  "created_at": {
+    "$date": "2025-04-02T00:00:00.000Z"
+  },
+  "updated_at": {
+    "$date": "2025-04-02T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec354fc26101a6400fc972"
+  },
+  "review_id": {
+    "$oid": "67ec1f74c26101a6400fc96e"
+  },
+  "author_id": {
+    "$oid": "67e5c60c5f3ef5f387016dff"
+  },
+  "content": "Hii",
+  "created_at": {
+    "$date": "2025-04-01T18:49:51.420Z"
+  },
+  "updated_at": {
+    "$date": "2025-04-01T18:49:51.420Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec57a6c26101a6400fc978"
+  },
+  "review_id": {
+    "$oid": "67e2a263a39560e24e506776"
+  },
+  "author_id": {
+    "$oid": "67e5c60c5f3ef5f387016dff"
+  },
+  "content": "Hihi",
+  "created_at": {
+    "$date": "2025-04-01T21:16:22.674Z"
+  },
+  "updated_at": {
+    "$date": "2025-04-01T21:16:22.674Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec7014c26101a6400fc985"
+  },
+  "review_id": {
+    "$oid": "67ec60a4c26101a6400fc980"
+  },
+  "author_id": {
+    "$oid": "67ec6ff6c26101a6400fc984"
+  },
+  "content": "Hiiiiii",
+  "created_at": {
+    "$date": "2025-04-01T23:00:36.851Z"
+  },
+  "updated_at": {
+    "$date": "2025-04-01T23:00:36.851Z"
   }
 }]

@@ -3,9 +3,9 @@
     "$oid": "67e29d71a39560e24e50676f"
   },
   "email": "lythuymyngoc310@gmail.com",
-  "password": "",
+  "password": "$2y$10$RSSK84gnebBwEhHMFZEhhuXvbooKG0iIPBFboOExzHXLby.7cPfC6",
   "role": "admin",
-  "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fquantrimang.com%2Fcong-nghe%2Favatar-doi-ava-doi-avt-cap-avatar-cap-cho-nhung-cap-doi-181417&psig=AOvVaw3wsmKDIM8AIponnl7ZYiuQ&ust=1742991029096000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDF1tuZpYwDFQAAAAAdAAAAABAJ",
+  "avatar": "https://www.lrc-hueuni.edu.vn/wp-content/uploads/2024/06/avatar-gau-cute-10.jpg",
   "bio": "Quản trị viên hệ thống",
   "created_at": {
     "$date": "2025-03-27T00:00:00.000Z"
@@ -34,6 +34,23 @@
   "updated_at": {
     "$date": "2025-03-27T21:41:32.931Z"
   },
-  "role": "user",
+  "role": "reviewer",
   "status": "active"
+},
+{
+  "_id": {
+    "$oid": "67ec6ff6c26101a6400fc984"
+  },
+  "email": "my.ngoc@example.com",
+  "password": "$2y$10$kmXZjOngQ13ldA0IUvs4H.baVbi5e5InhbemRl94nNPWcZ7F1PhTC",
+  "role": "user",
+  "status": "active",
+  "firstName": "Ngoc",
+  "lastName": "My",
+  "created_at": {
+    "$date": "2025-04-01T23:00:05.982Z"
+  },
+  "updated_at": {
+    "$date": "2025-04-01T23:00:05.982Z"
+  }
 }]

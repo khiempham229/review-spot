@@ -2,10 +2,10 @@
   "_id": {
     "$oid": "67e2a263a39560e24e506776"
   },
-  "title": "Tiêu đề bài viết",
-  "content": "Nội dung bài viết...",
+  "title": "Why do we use it?",
+  "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
   "author_id": {
-    "$oid": "67e29e54a39560e24e506771"
+    "$oid": "67e29d71a39560e24e50676f"
   },
   "status": "approved",
   "approved_by": {
@@ -26,15 +26,129 @@
     "$date": "2025-03-26T17:00:00.000Z"
   },
   "product_name": "Tên sản phẩm",
-  "rating": 9,
+  "rating": 5,
   "tags": [
     "Dưỡng ẩm",
     "Da dầu"
   ],
-  "comments_count": 10,
-  "likes_count": 19,
+  "comments_count": 1,
+  "likes_count": 1,
   "product_id": {
     "$oid": "67e4403f6be9fe6c9ab720ca"
   },
-  "updated_at": "2025-03-26T17:00:00.000+00:00"
+  "updated_at": {
+    "$date": "2025-03-26T17:00:00.000Z"
+  },
+  "product_image": "/public/assets/images/srm-cerave.png"
+},
+{
+  "_id": {
+    "$oid": "67ec1f74c26101a6400fc96e"
+  },
+  "title": "Review Sản phẩm 1",
+  "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "author_id": {
+    "$oid": "67e5c60c5f3ef5f387016dff"
+  },
+  "status": "approved",
+  "approved_by": null,
+  "approved_at": null,
+  "brand_id": {
+    "$oid": "67e444b16be9fe6c9ab720ec"
+  },
+  "category_ids": [
+    {
+      "$oid": "67e445e56be9fe6c9ab720f1"
+    }
+  ],
+  "created_at": {
+    "$date": "2025-04-01T17:16:36.314Z"
+  },
+  "product_name": "Sản phẩm 1",
+  "rating": 3,
+  "tags": [],
+  "comments_count": 3,
+  "likes_count": 2,
+  "product_id": null,
+  "updated_at": {
+    "$date": "2025-04-01T17:16:36.314Z"
+  },
+  "product_image": "/public/assets/images/srm-cerave.png"
+},
+{
+  "_id": {
+    "$oid": "67ec60a4c26101a6400fc980"
+  },
+  "title": "Review Sản phẩm 2",
+  "content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.\r\n\r\n",
+  "author_id": {
+    "$oid": "67e5c60c5f3ef5f387016dff"
+  },
+  "status": "approved",
+  "approved_by": null,
+  "approved_at": null,
+  "brand_id": {
+    "$oid": "67ec4f3b80f93c435b114ae0"
+  },
+  "category_ids": [
+    {
+      "$oid": "67e445e56be9fe6c9ab720f1"
+    }
+  ],
+  "created_at": {
+    "$date": "2025-04-01T21:54:44.756Z"
+  },
+  "product_name": "Sản phẩm 2",
+  "rating": 2,
+  "tags": [],
+  "comments_count": 1,
+  "likes_count": 1,
+  "product_id": null,
+  "product_image": "/uploads/images/67ec60a4b8bbe.jpg",
+  "updated_at": {
+    "$date": "2025-04-01T21:54:44.756Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec705bc26101a6400fc987"
+  },
+  "title": "Review Sản Phẩm Mỹ Ngo",
+  "content": "Số 1",
+  "author_id": {
+    "$oid": "67ec6ff6c26101a6400fc984"
+  },
+  "status": "pending",
+  "approved_by": null,
+  "approved_at": null,
+  "brand_id": {
+    "$oid": "67ec4f2b80f93c435b114adf"
+  },
+  "category_ids": [
+    {
+      "$oid": "67e2a2f9a39560e24e506779"
+    },
+    {
+      "$oid": "67e445e56be9fe6c9ab720f1"
+    },
+    {
+      "$oid": "67e446026be9fe6c9ab720f2"
+    },
+    {
+      "$oid": "67e4461d6be9fe6c9ab720f3"
+    }
+  ],
+  "created_at": {
+    "$date": "2025-04-01T23:01:47.290Z"
+  },
+  "product_name": "Ngò Ngo",
+  "rating": 5,
+  "tags": [],
+  "comments_count": 0,
+  "likes_count": 0,
+  "product_id": null,
+  "product_image": "/uploads/images/67ec705b470cf.jpg",
+  "updated_at": {
+    "$date": "2025-04-01T23:01:47.290Z"
+  }
 }]

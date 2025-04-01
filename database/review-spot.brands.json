@@ -3,9 +3,9 @@
     "$oid": "67e444b16be9fe6c9ab720ec"
   },
   "name": "CeraVe",
-  "description": "Thương hiệu chăm sóc da nổi tiếng với công thức chứa ceramides.",
+  "description": "Thương hiệu CeraVe.",
   "country": "USA",
-  "logo": "https://example.com/cerave-logo.png",
+  "logo": "/public/assets/images/brands/logo-cerave.svg",
   "created_at": {
     "$date": "2025-03-27T00:00:00.000Z"
   },
@@ -20,7 +20,7 @@
   "name": "La Roche-Posay",
   "description": "Thương hiệu dược mỹ phẩm chuyên dành cho da nhạy cảm.",
   "country": "France",
-  "logo": "https://example.com/la-roche-posay-logo.png",
+  "logo": "/public/assets/images/brands/logo-La-Roche-Posay.png",
   "created_at": {
     "$date": "2025-03-27T00:00:00.000Z"
   },
@@ -35,7 +35,82 @@
   "name": "The Ordinary",
   "description": "Hãng mỹ phẩm tối giản, tập trung vào thành phần hoạt chất.",
   "country": "Canada",
-  "logo": "https://example.com/the-ordinary-logo.png",
+  "logo": "/public/assets/images/brands/logo-The-Ordinary.svg",
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec4f2b80f93c435b114adf"
+  },
+  "name": "Chanel",
+  "description": "Thương hiệu Chanel.",
+  "country": "USA",
+  "logo": "/public/assets/images/brands/logo-chanel.svg",
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec4f3b80f93c435b114ae0"
+  },
+  "name": "Dior",
+  "description": "Thương hiệu Dior.",
+  "country": "USA",
+  "logo": "/public/assets/images/brands/logo-dior.svg",
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec4f4c80f93c435b114ae1"
+  },
+  "name": "Estee",
+  "description": "Thương hiệu Estee.",
+  "country": "USA",
+  "logo": "/public/assets/images/brands/logo-estee.svg",
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec4f5b80f93c435b114ae2"
+  },
+  "name": "Mac",
+  "description": "Thương hiệu Mac.",
+  "country": "USA",
+  "logo": "/public/assets/images/brands/logo-mac.svg",
+  "created_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  },
+  "updated_at": {
+    "$date": "2025-03-27T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ec4f7780f93c435b114ae3"
+  },
+  "name": "Loreal Paris",
+  "description": "Thương hiệu Loreal Paris.",
+  "country": "Franch",
+  "logo": "/public/assets/images/brands/logo-loreal-paris.svg",
   "created_at": {
     "$date": "2025-03-27T00:00:00.000Z"
   },
